@@ -12,8 +12,6 @@ int main()
 
 	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
 
-
-
 	//Textures
 	Texture2D map = LoadTexture("nature_tileset/MapWorld.png");
 
