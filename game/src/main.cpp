@@ -10,7 +10,7 @@ int main()
 
 	InitWindow( WINDOW_DIMENSION[0], WINDOW_DIMENSION[1], "Hawlerak Clash" );
 
-	Character knight;
+	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
 
 
 
@@ -24,9 +24,6 @@ int main()
 		(0.0) }; //SelfNote: is negative widh becuase the image is the one that moves not the window, and time 2 'cause map is scaled by 2.
 	const float mapScale = 2.0f;
 	SetTargetFPS(60);
-
-	knight.setScreenPos(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
-	//knight.setWorldPos((Vector2Scale(knight.getWorldPos(), -1.0f)));
 
 	while (!WindowShouldClose())
 	{
