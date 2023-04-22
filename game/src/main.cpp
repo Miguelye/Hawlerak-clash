@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "raymath.h"
 #include "Character.h"
-
+#include "Prop.h"
 
 int main()
 {
@@ -10,11 +10,14 @@ int main()
 
 	InitWindow( WINDOW_DIMENSION[0], WINDOW_DIMENSION[1], "Hawlerak Clash" );
 
-	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
 
 	//Textures
 	Texture2D map = LoadTexture("nature_tileset/MapWorld.png");
+	Texture2D rockTexture = LoadTexture("nature_tileset/Rock.png");
 
+	//Objects
+	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
+	Prop rock(Vector2{1600.0f, 200.0f}, rockTexture);
 
 	//Positions
 	Vector2 mapPos{	
@@ -22,6 +25,8 @@ int main()
 		(0.0) }; //SelfNote: is negative widh becuase the image is the one that moves not the window, and time 2 'cause map is scaled by 2.
 	const float mapScale = 2.0f;
 	SetTargetFPS(60);
+	Vector2 playerInitPos{ 1800.0, 80.0 };
+	knight.setWorldPos(playerInitPos);
 
 	while (!WindowShouldClose())
 	{
@@ -34,6 +39,7 @@ int main()
 		//Maps
 		DrawTextureEx(map, mapPos, 0.0, mapScale, WHITE);
 
+		rock.Render(knight.getWorldPos());
 		knight.tick(dT);
 
 		//variables
@@ -42,7 +48,12 @@ int main()
 							knight.getWorldPos().x + WINDOW_DIMENSION[0] > map.width * mapScale ||
 							knight.getWorldPos().y + WINDOW_DIMENSION[1] > map.height * mapScale;
 		
-		if (isOutOfBound) knight.mapOutOfBound();
+		
+		if (isOutOfBound)
+		{
+			knight.mapOutOfBound();
+		}
+
 		EndDrawing();
 	}
 	CloseWindow();
