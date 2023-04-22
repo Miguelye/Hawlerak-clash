@@ -2,6 +2,8 @@
 #include "raymath.h"
 #include "Character.h"
 #include "Prop.h"
+#include "Enemy.h"
+
 
 int main()
 {
@@ -14,9 +16,12 @@ int main()
 	//Textures
 	Texture2D map = LoadTexture("nature_tileset/MapWorld.png");
 	Texture2D rockTexture = LoadTexture("nature_tileset/Rock.png");
+	Texture2D enemyIdle = LoadTexture("characters/goblin_idle_spritesheet.png");
+	Texture2D enemyRun = LoadTexture("characters/goblin_run_spritesheet.png");
 
 	//Objects
 	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
+	Enemy goblin(Vector2{ 1800.0f, 350.0f }, enemyIdle, enemyRun);
 
 	Prop propArr[2]{
 		Prop{Vector2{1600.0f, 320.0f}, rockTexture},
@@ -48,7 +53,10 @@ int main()
 		{
 			Props.Render(knight.getWorldPos());
 		}
+
+		//Ticks
 		knight.tick(dT);
+		goblin.tick(dT);
 
 		//variables
 		bool isOutOfBound = knight.getWorldPos().x < 0.f ||
