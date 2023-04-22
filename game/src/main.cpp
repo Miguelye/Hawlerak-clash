@@ -17,12 +17,16 @@ int main()
 
 	//Objects
 	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
-	Prop rock(Vector2{1600.0f, 200.0f}, rockTexture);
+
+	Prop propArr[2]{
+		Prop{Vector2{1600.0f, 320.0f}, rockTexture},
+		Prop{Vector2{1600.0f, 256.0f}, rockTexture}
+	};
 
 	//Positions
 	Vector2 mapPos{	
 		(-map.width * 2) + WINDOW_DIMENSION[0],
-		(0.0) }; //SelfNote: is negative widh becuase the image is the one that moves not the window, and time 2 'cause map is scaled by 2.
+		(0.0) }; //SelfNote: is negative widh because the image is the one that moves not the window, and time 2 'cause map is scaled by 2.
 	const float mapScale = 2.0f;
 	SetTargetFPS(60);
 	Vector2 playerInitPos{ 1800.0, 80.0 };
@@ -39,7 +43,11 @@ int main()
 		//Maps
 		DrawTextureEx(map, mapPos, 0.0, mapScale, WHITE);
 
-		rock.Render(knight.getWorldPos());
+		//Draw Props
+		for each (Prop Props in propArr)
+		{
+			Props.Render(knight.getWorldPos());
+		}
 		knight.tick(dT);
 
 		//variables
@@ -51,7 +59,15 @@ int main()
 		
 		if (isOutOfBound)
 		{
-			knight.mapOutOfBound();
+			knight.UndoMovement();
+		}
+
+		for each (auto props in propArr)
+		{
+			if (CheckCollisionRecs(props.getCollisionRec(knight.getWorldPos()), knight.getCollisionRec()))
+			{
+				knight.UndoMovement();
+			}
 		}
 
 		EndDrawing();
