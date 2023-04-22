@@ -55,8 +55,8 @@ int main()
 		}
 
 		//Ticks
-		knight.tick(dT);
 		goblin.tick(dT);
+		knight.tick(dT);
 
 		//variables
 		bool isOutOfBound = knight.getWorldPos().x < 0.f ||
