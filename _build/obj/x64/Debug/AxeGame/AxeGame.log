@@ -1,0 +1,12 @@
+﻿  main.cpp
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\main.cpp(33,20): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\main.cpp(33,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  BaseCharacter.cpp
+  Enemy.cpp
+C:\Users\migue\source\repos\Hawlerak Clash\_build\Enemy.cpp(10,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\migue\source\repos\Hawlerak Clash\_build\Enemy.cpp(11,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Source.cpp
+C:\Users\migue\source\repos\Hawlerak Clash\_build\Source.cpp(9,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\migue\source\repos\Hawlerak Clash\_build\Source.cpp(10,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  AxeGame.vcxproj -> C:\Users\migue\source\repos\Hawlerak Clash\_bin\Debug\AxeGame.exe
