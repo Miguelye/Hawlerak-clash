@@ -9,8 +9,8 @@ Character::Character(int winWidth, int winHeight)
         width = texture.width / maxFrames;
     height = texture.height;
     scaleSize = 4.0f;
-    screenCenterPos = screenPos = { static_cast<float>(winWidth) / 2.0f - scaleSize * (0.5f * width),
-                                    static_cast<float>(winHeight) / 2.0f - scaleSize * (0.5f * height) };
+    screenPos = { static_cast<float>(winWidth) / 2.0f - scaleSize * (0.5f * width),
+                  static_cast<float>(winHeight) / 2.0f - scaleSize * (0.5f * height) };
 }
 
 void Character::setWorldPos(Vector2 position)

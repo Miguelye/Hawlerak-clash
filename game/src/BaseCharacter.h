@@ -15,7 +15,6 @@ protected:
     Texture2D idle;
     Texture2D run;
     Vector2 screenPos{};
-    Vector2 screenCenterPos{};
     Vector2 worldPos{};
     Vector2 worldPosLastFrame{};
     // 1 : facing right, -1 : facing left

@@ -37,6 +37,8 @@ int main()
 	Vector2 playerInitPos{ 1800.0, 80.0 };
 	knight.setWorldPos(playerInitPos);
 
+	goblin.setTarget(&knight);
+
 	while (!WindowShouldClose())
 	{
 		const float dT = GetFrameTime();
@@ -58,7 +60,7 @@ int main()
 		goblin.tick(dT);
 		knight.tick(dT);
 
-		goblin.setTarget(&knight);
+
 
 		//variables
 		bool isOutOfBound = knight.getWorldPos().x < 0.f ||
