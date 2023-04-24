@@ -12,30 +12,30 @@
     <ClCompile Include="..\game\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="..\game\src\BaseCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Prop.cpp">
+    <ClCompile Include="..\game\src\Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
+    <ClCompile Include="..\game\src\Prop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BaseCharacter.cpp">
+    <ClCompile Include="..\game\src\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character.h">
+    <ClInclude Include="..\game\src\BaseCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Prop.h">
+    <ClInclude Include="..\game\src\Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
+    <ClInclude Include="..\game\src\Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaseCharacter.h">
+    <ClInclude Include="..\game\src\Prop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,4 +16,8 @@ void Enemy::tick(float deltaTime)
 {
     BaseCharacter::tick(deltaTime);
 }
-//hola preciosidad
+
+void Enemy::setTarget(Character* target)
+{
+    this->target = target;
+}
