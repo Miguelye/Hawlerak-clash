@@ -18,6 +18,11 @@ void Character::setWorldPos(Vector2 position)
     worldPos = position;
 }
 
+Vector2 Character::getScreenPos()
+{
+    return screenPos;
+}
+
 void Character::tick(float deltaTime)
 {
 
