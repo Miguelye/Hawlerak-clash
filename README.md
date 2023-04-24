@@ -1,2 +1,2 @@
-# AXEGAME
-C++ game using the library Raylib, programming simple collision behavior and motion.
+# Hawlerak Clash
+C++ game using the library Raylib.
