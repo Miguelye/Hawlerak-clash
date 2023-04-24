@@ -26,29 +26,14 @@ Vector2 Character::getScreenPos()
 void Character::tick(float deltaTime)
 {
 
-    Vector2 direction{};
     if (IsKeyDown(KEY_A))
-        direction.x -= 1.0;
+        velocity.x -= 1.0;
     if (IsKeyDown(KEY_D))
-        direction.x += 1.0;
+        velocity.x += 1.0;
     if (IsKeyDown(KEY_W))
-        direction.y -= 1.0;
+        velocity.y -= 1.0;
     if (IsKeyDown(KEY_S))
-        direction.y += 1.0;
+        velocity.y += 1.0;
 
-    worldPosLastFrame = worldPos;
-
-    if (Vector2Length(direction) != 0.0)
-    {
-        // set worldPos = worldPos + direction
-        worldPos = Vector2Add(worldPos, Vector2Scale(Vector2Normalize(direction), speed));
-        direction.x < 0.f ? rightLeft = -1.f : rightLeft = 1.f;
-        texture = run;
-    }
-    else
-    {
-        texture = idle;
-    }
-    
     BaseCharacter::tick(deltaTime);
 }

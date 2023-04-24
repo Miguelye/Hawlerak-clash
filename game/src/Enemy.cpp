@@ -16,13 +16,7 @@ Enemy::Enemy(Vector2 pos, Texture2D idleTexture, Texture2D runTexture)
 void Enemy::tick(float deltaTime)
 {
     //Get toTarget
-    Vector2 toTarget = Vector2Subtract(target->getScreenPos(), screenPos);
-    // Normalize toTarget
-    toTarget = Vector2Normalize(toTarget);
-    //multiply target by speed
-    toTarget = Vector2Scale(toTarget, speed);
-    //move the enemy
-    worldPos = Vector2Add(worldPos, toTarget);
+    velocity = Vector2Subtract(target->getScreenPos(), screenPos);
     screenPos = Vector2Subtract(worldPos, target->getWorldPos());
     BaseCharacter::tick(deltaTime);
 }

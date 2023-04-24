@@ -17,6 +17,7 @@ protected:
     Vector2 screenPos{};
     Vector2 worldPos{};
     Vector2 worldPosLastFrame{};
+    Vector2 velocity{};
     // 1 : facing right, -1 : facing left
     float rightLeft{ 1.f };
     // animation variables
