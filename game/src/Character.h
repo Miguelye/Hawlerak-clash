@@ -10,6 +10,7 @@ public:
     virtual void tick(float deltaTime) override;
     void setWorldPos(Vector2 position);
     virtual Vector2 getScreenPos() override;
+    Rectangle getWeaponCollisionRec() { return weaponCollisionRec; }
 private:
     int winWidth{};
     int winHeight{};

@@ -11,6 +11,9 @@ public:
     Rectangle getCollisionRec();
     virtual void tick(float deltaTime);
     virtual Vector2 getScreenPos() = 0;
+    bool getAlive() { return alive; }
+    void setAlive(bool isAlive) { alive = isAlive; }
+
 protected:
     Texture2D texture;
     Texture2D idle;
@@ -30,4 +33,5 @@ protected:
     float width;
     float height;
     float scaleSize;
+    bool alive = true;
 };

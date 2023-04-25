@@ -29,7 +29,12 @@ void Character::setWorldPos(Vector2 position)
 
 void Character::tick(float deltaTime)
 {
+    worldPosLastFrame = worldPos;
 
+    if (!getAlive())
+    {
+        return;
+    }
     if (IsKeyDown(KEY_A))
         velocity.x -= 1.0;
     if (IsKeyDown(KEY_D))
@@ -45,11 +50,12 @@ void Character::tick(float deltaTime)
     Vector2 origin{};
     Vector2 offset{};
     float rotation;
+
     if (rightLeft > 0.f)
     {
         origin = { 0.f, weapon.height * scaleSize };
         offset = { 35.f, 55.f };
-        rotation = 35.f;
+
         weaponCollisionRec = {
             getScreenPos().x + offset.x,
             getScreenPos().y + offset.y - weapon.height * scaleSize,
@@ -57,18 +63,21 @@ void Character::tick(float deltaTime)
             weapon.height * scaleSize,
         };
 
+        rotation = IsMouseButtonDown(MOUSE_LEFT_BUTTON) ? 35.f : 0.f;
     }
     else
     {
         origin = { weapon.width * scaleSize, weapon.height * scaleSize };
         offset = { 25.f, 55.f };
-        rotation = -35.f;
+
         weaponCollisionRec = {
             getScreenPos().x + offset.x - weapon.width * scaleSize,
             getScreenPos().y + offset.y - weapon.height * scaleSize,
             weapon.width * scaleSize,
             weapon.height * scaleSize,
         };
+
+        rotation = IsMouseButtonDown(MOUSE_LEFT_BUTTON) ? -35.f : 0.f;
     }
     
 

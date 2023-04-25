@@ -2,8 +2,8 @@
   Character.cpp
 C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(11,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(12,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(84,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(83,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(82,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(81,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(93,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(92,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(91,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(90,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   AxeGame.vcxproj -> C:\Users\migue\source\repos\Hawlerak Clash\_bin\Debug\AxeGame.exe
