@@ -68,12 +68,13 @@ int main()
 							knight.getWorldPos().x + WINDOW_DIMENSION[0] > map.width * mapScale ||
 							knight.getWorldPos().y + WINDOW_DIMENSION[1] > map.height * mapScale;
 		
-		
+		//Colliding of map boundaries
 		if (isOutOfBound)
 		{
 			knight.UndoMovement();
 		}
 
+		//collading with props
 		for each (auto props in propArr)
 		{
 			if (CheckCollisionRecs(props.getCollisionRec(knight.getWorldPos()), knight.getCollisionRec()))
@@ -82,7 +83,7 @@ int main()
 			}
 		}
 
-		
+		//Killing goblings
 		if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 		{
 			if (CheckCollisionRecs(goblin.getCollisionRec(), knight.getWeaponCollisionRec()))

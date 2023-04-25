@@ -1,9 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (obj\x64\Debug\AxeGame\) contains files shared from another project (AxeGame.vcxproj, Hawlerak Clash.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Character.cpp
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(11,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(12,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(93,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(92,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(91,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\migue\source\repos\Hawlerak Clash\game\src\Character.cpp(90,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Enemy.cpp
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\Enemy.cpp(10,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\migue\source\repos\Hawlerak Clash\game\src\Enemy.cpp(11,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   AxeGame.vcxproj -> C:\Users\migue\source\repos\Hawlerak Clash\_bin\Debug\AxeGame.exe

@@ -12,6 +12,7 @@ public:
 	virtual Vector2 getScreenPos() override;
 private:
 	Character* target;
+	float dps{ 10.f };
 };
 
 
