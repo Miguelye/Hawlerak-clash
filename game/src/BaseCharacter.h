@@ -10,11 +10,11 @@ public:
     void UndoMovement();
     Rectangle getCollisionRec();
     virtual void tick(float deltaTime);
+    virtual Vector2 getScreenPos() = 0;
 protected:
     Texture2D texture;
     Texture2D idle;
     Texture2D run;
-    Vector2 screenPos{};
     Vector2 worldPos{};
     Vector2 worldPosLastFrame{};
     Vector2 velocity{};
