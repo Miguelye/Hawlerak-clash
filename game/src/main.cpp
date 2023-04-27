@@ -3,7 +3,7 @@
 #include "Character.h"
 #include "Prop.h"
 #include "Enemy.h"
-
+#include <string>
 
 int main()
 {
@@ -16,12 +16,18 @@ int main()
 	//Textures
 	Texture2D map = LoadTexture("nature_tileset/MapWorld.png");
 	Texture2D rockTexture = LoadTexture("nature_tileset/Rock.png");
-	Texture2D enemyIdle = LoadTexture("characters/goblin_idle_spritesheet.png");
-	Texture2D enemyRun = LoadTexture("characters/goblin_run_spritesheet.png");
+	Texture2D goblinIdle = LoadTexture("characters/goblin_idle_spritesheet.png");
+	Texture2D goblinRun = LoadTexture("characters/goblin_run_spritesheet.png");
+	Texture2D slimeRun = LoadTexture("characters/slime_run_spritesheet.png");
+	Texture2D slimeIdle = LoadTexture("characters/slime_idle_spritesheet.png");
 
 	//Objects
 	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
-	Enemy goblin(Vector2{ 1800.0f, 350.0f }, enemyIdle, enemyRun);
+	Enemy goblin(Vector2{ 1800.0f, 350.0f }, goblinIdle, goblinRun);
+	Enemy slime(Vector2{ 1600.0f, 300.0f }, slimeIdle, slimeRun);
+
+	Enemy* enemies[]{ &goblin, &slime };
+
 
 	Prop propArr[2]{
 		Prop{Vector2{1600.0f, 320.0f}, rockTexture},
@@ -37,7 +43,10 @@ int main()
 	Vector2 playerInitPos{ 1800.0, 80.0 };
 	knight.setWorldPos(playerInitPos);
 
-	goblin.setTarget(&knight);
+	for each (auto enemy in enemies)
+	{
+		enemy->setTarget(&knight);
+	}
 
 	while (!WindowShouldClose())
 	{
@@ -57,7 +66,10 @@ int main()
 		}
 
 		//Ticks
-		goblin.tick(dT);
+		for each (auto enemy in enemies)
+		{
+			enemy->tick(dT);
+		}
 		knight.tick(dT);
 
 
@@ -83,12 +95,29 @@ int main()
 			}
 		}
 
+		if (!knight.getAlive()) //knight is dead
+		{
+			DrawText("Game Over!", 55.f, 45.f, 40, RED);
+			EndDrawing();
+			goblin.setSpeed(0);
+			continue;
+		}
+		else
+		{
+			std::string knightHealthString = "Health: ";
+			knightHealthString.append(std::to_string(knight.getHealth()), 0, 5);
+			DrawText(knightHealthString.c_str(), 55.f, 45.f, 40, GREEN);
+		}
+
 		//Killing goblings
 		if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 		{
-			if (CheckCollisionRecs(goblin.getCollisionRec(), knight.getWeaponCollisionRec()))
+			for each (auto enemy in enemies)
 			{
-				goblin.setAlive(false);
+				if (CheckCollisionRecs(enemy->getCollisionRec(), knight.getWeaponCollisionRec()))
+				{
+					enemy->setAlive(false);
+				}
 			}
 		}
 

@@ -13,7 +13,7 @@ public:
     virtual Vector2 getScreenPos() = 0;
     bool getAlive() { return alive; }
     void setAlive(bool isAlive) { alive = isAlive; }
-
+    void setSpeed(float speed) { this->speed = speed; }
 protected:
     Texture2D texture;
     Texture2D idle;

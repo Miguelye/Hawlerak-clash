@@ -13,6 +13,7 @@ public:
 private:
 	Character* target;
 	float dps{ 10.f };
+	float radius{ 25.f };
 };
 
 
