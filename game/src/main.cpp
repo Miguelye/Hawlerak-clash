@@ -24,10 +24,15 @@ int main()
 	//Objects
 	Character knight(WINDOW_DIMENSION[0], WINDOW_DIMENSION[1]);
 	Enemy goblin(Vector2{ 1800.0f, 350.0f }, goblinIdle, goblinRun);
-	Enemy slime(Vector2{ 1600.0f, 300.0f }, slimeIdle, slimeRun);
+	Enemy goblin1(Vector2{ 1200.0f, 500.0f }, goblinIdle, goblinRun);
+	Enemy goblin2(Vector2{ 800.0f, 200.0f }, goblinIdle, goblinRun);
+	Enemy slime(Vector2{ 1500.0f, 300.0f }, slimeIdle, slimeRun);
+	Enemy slime2(Vector2{ 1000.0f, 150.0f }, slimeIdle, slimeRun);
+	Enemy slime3(Vector2{ 700.0f, 400.0f }, slimeIdle, slimeRun);
 
-	Enemy* enemies[]{ &goblin, &slime };
+	Enemy* enemies[]{ &goblin, &slime, &goblin1, &goblin2, &slime2, &slime3 };
 
+	int deadEnemies = 0;
 
 	Prop propArr[2]{
 		Prop{Vector2{1600.0f, 320.0f}, rockTexture},
@@ -117,10 +122,17 @@ int main()
 				if (CheckCollisionRecs(enemy->getCollisionRec(), knight.getWeaponCollisionRec()))
 				{
 					enemy->setAlive(false);
+					deadEnemies++;
 				}
 			}
 		}
 
+		if (deadEnemies >= 6)
+		{
+			DrawText("You Win!", 100.f, 160.f, 40, YELLOW);
+			EndDrawing();
+			continue;
+		}
 		EndDrawing();
 	}
 	CloseWindow();
